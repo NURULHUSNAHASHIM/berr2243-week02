@@ -46,15 +46,26 @@ async function main() {
         // Task 3: Insert drivers (use for...of to handle async properly)
         for (const driver of drivers) {
             const result = await driversCollection.insertOne(driver);
-            console.log(`New driver created with _id: ${result.insertedId}`);
-        });
-
+            console.log(`New driver created with _id: ${result.insertedId});
+        }`);
+            }
           // Task 4: Query available drivers (isAvailable: true, rating >= 4.5)
       const availableDrivers = await db.collection('drivers').find({ 
         isAvailable: true,
         rating: { $gte: 4.5 }
       }).toArray();
       console.log("Available drivers:", availableDrivers);
+
+        // Task 5: Update rating for John Doe (+0.1)
+        const updateResult = await driversCollection.updateOne(
+            { name: "John Doe" },
+            { $inc: { rating: 0.1 } }
+        );
+        console.log(`Driver updated with result: ${JSON.stringify(updateResult)}`);
+
+        // Task 6: Delete unavailable drivers
+        const deleteResult = await driversCollection.deleteOne({ isAvailable: false });
+        console.log(`Driver deleted with result: ${JSON.stringify(deleteResult)}`);   
 
     } catch (err) {
         console.error("Error:", err);
