@@ -47,7 +47,14 @@ async function main() {
         for (const driver of drivers) {
             const result = await driversCollection.insertOne(driver);
             console.log(`New driver created with _id: ${result.insertedId}`);
-        }
+        });
+
+          // Task 4: Query available drivers (isAvailable: true, rating >= 4.5)
+      const availableDrivers = await db.collection('drivers').find({ 
+        isAvailable: true,
+        rating: { $gte: 4.5 }
+      }).toArray();
+      console.log("Available drivers:", availableDrivers);
 
     } catch (err) {
         console.error("Error:", err);
