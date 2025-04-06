@@ -1,0 +1,23 @@
+{
+  "name": "week-2",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000b\u0000e\u0000r\u0000r\u00002\u00002\u00004\u00003\u0000-\u0000w\u0000e\u0000e\u0000k\u00000\u00002\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NURULHUSNAHASHIM/berr2243-week02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NURULHUSNAHASHIM/berr2243-week02/issues"
+  },
+  "homepage": "https://github.com/NURULHUSNAHASHIM/berr2243-week02#readme",
+  "dependencies": {
+    "mongodb": "^6.15.0"
+  }
+}
